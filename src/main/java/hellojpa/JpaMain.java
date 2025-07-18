@@ -24,15 +24,14 @@ public class JpaMain {
         try {
 
             Member member = new Member();
-            member.setId(3L);
             member.setName("goodJob");
-            em.persist(member);
+            em.persist(member); // 영속성 상태
 
             /*Member findMember = em.find(Member.class, 1L);
             *//*em.find로 가져온 객체는 JPA가 관리함*//*
             findMember.setName("Jack");*/
             List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                            .setFirstResult(5)
+                            .setFirstResult(0) // 0번쨰 로우부터
                             .setMaxResults(8).getResultList();
 
             for(Member m : result) {
