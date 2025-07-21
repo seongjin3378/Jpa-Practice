@@ -1,4 +1,6 @@
-package hellojpa;
+package example1;
+
+import example1.dto.Member;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

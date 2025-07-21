@@ -1,11 +1,9 @@
-package hellojpa;
+package example1.dto;
 
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 
@@ -14,6 +12,13 @@ public class BankInfo {
     @GeneratedValue
     private Long bankId;
     private String bankName;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    Member member;
+
 
     public String getAccountNumber() {
         return accountNumber;
@@ -40,5 +45,13 @@ public class BankInfo {
     }
 
     private String accountNumber;
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
 
 }
