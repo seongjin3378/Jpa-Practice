@@ -18,15 +18,18 @@ public class Patient {
     private String name;
 
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Appointment> appointments = new ArrayList<Appointment>();
+
+
+    @OneToOne(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    private PatientDetail patientDetail;
 
 
     public void addAppointment(Appointment appointment) {
 
         this.appointments.add(appointment);
         appointment.setPatient(this);
-
 
 
     }
@@ -63,7 +66,4 @@ public class Patient {
         this.patientDetail = patientDetail;
     }
 
-    @OneToOne()
-    @JoinColumn(name = "patient_detail_id") //fk
-    private PatientDetail patientDetail;
 }

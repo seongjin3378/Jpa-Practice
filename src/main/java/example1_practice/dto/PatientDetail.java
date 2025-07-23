@@ -13,7 +13,31 @@ public class PatientDetail {
     private String guardName;
 
 
-    @OneToOne(mappedBy = "patientDetail")
+    @OneToOne
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGuardName() {
+        return guardName;
+    }
+
+    public void setGuardName(String guardName) {
+        this.guardName = guardName;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
 }

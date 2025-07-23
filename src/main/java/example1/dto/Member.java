@@ -24,7 +24,7 @@ public class Member {
         this.hospitalInfo = hospitalInfo;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)// Lazy:proxy, Eager: 즉시로딩(왠만하면 쓰면 안됨, JPQL N+1 문제)
     @JoinColumn(name = "HOSPITALID")
     private HospitalInfo hospitalInfo;
 
