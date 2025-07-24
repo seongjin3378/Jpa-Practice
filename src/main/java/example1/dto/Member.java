@@ -1,6 +1,8 @@
 package example1.dto;
 
 
+import example3.dto.Company;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,13 +14,43 @@ public class Member {
     @Column(name = "user_name")
     private String name;
 
+    private String gender;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     // 단방향 1:1 매핑 — Member 테이블에만 외래키(bank_id)가 생깁니다.
     @ManyToOne
     @JoinColumn(name = "bank_id")   // 외래 키 컬럼
     private BankInfo bankInfo;
 
+    public String getAddress() {
+        return address;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private String address;
+
+
+    @ManyToOne
+    @JoinColumn(name = "COMPANYPK")
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public void setHospitalInfo(HospitalInfo hospitalInfo) {
         this.hospitalInfo = hospitalInfo;
