@@ -21,7 +21,7 @@ public class ExampleElementCollection {
         tx.begin();
         try {
 
-            Customer customer = new Customer("아무개1", "익산", "IT 인강 선생님", "롤");
+            Customer customer = new Customer("아무개1", "익산", "IT 인강 강사", "롤");
             Customer customer2 = new Customer("아묵개2", "신림", "정보보안가 취준생", "롤");
             Customer customer3 = new Customer("아무개3", "성남", "백엔드 개발자", "롤");
             Customer customer4 = new Customer("아무개4", "용인", "ERP 풀스택 개발자", "롤");
