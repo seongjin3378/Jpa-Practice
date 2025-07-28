@@ -25,12 +25,13 @@ public class ExampleElementCollection {
             Customer customer2 = new Customer("아묵개2", "신림", "정보보안가 취준생", "롤");
             Customer customer3 = new Customer("아무개3", "성남", "백엔드 개발자", "롤");
             Customer customer4 = new Customer("아무개4", "용인", "ERP 풀스택 개발자", "롤");
-
+            Customer customer5 = new Customer("아무개5",  "구로", "디지털 포렌식 전문가", "롤");
             List<Customer> customers = new ArrayList<Customer>();
             customers.add(customer);
             customers.add(customer2);
             customers.add(customer3);
             customers.add(customer4);
+            customers.add(customer5);
 
             PcRoom pcRoom = new PcRoom();
             pcRoom.setCity("신림");
